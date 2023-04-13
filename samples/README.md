@@ -7,3 +7,4 @@ This folder contains samples for migrating ASP.NET Framework to ASP.NET Core usi
     - *`RemoteApp/Bearer`*: This uses bearer authentication. Requires setting up an Azure B2C instance and filling in the values in `appsettings.json`
     - *`RemoteApp/Forms`*: This uses forms based authentication
     - *`RemoteApp/Identity`*: This uses ASP.NET Framework identity for authentication
+- *[`MachineKey`](MachineKey/README.md)*: This app shows how to share `System.Web.Security.MachineKey` calls between framework and core

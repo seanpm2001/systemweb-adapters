@@ -717,6 +717,14 @@ namespace System.Web.Configuration
         public string Version { get { throw new System.PlatformNotSupportedException("Only supported when running on ASP.NET Core or System.Web");} }
     }
 }
+namespace System.Web.Security
+{
+    public static partial class MachineKey
+    {
+        public static byte[] Protect(byte[] userData, params string[] purposes) { throw new System.PlatformNotSupportedException("Only supported when running on ASP.NET Core or System.Web");}
+        public static byte[] Unprotect(byte[] protectedData, params string[] purposes) { throw new System.PlatformNotSupportedException("Only supported when running on ASP.NET Core or System.Web");}
+    }
+}
 namespace System.Web.SessionState
 {
     public partial class HttpSessionState : System.Collections.ICollection, System.Collections.IEnumerable
