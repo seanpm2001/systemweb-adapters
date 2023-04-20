@@ -10,7 +10,7 @@ In order to unprotect values from ASP.NET Core apps, .NET Framework apps must co
 
 ## ASP.NET Core Apps
 
-In order to use the `MachineKey` APIs on ASP.NET Core, it must be opted into:
+In order to use the `MachineKey` APIs on ASP.NET Core, the same configuration of the data protection must be enabled:
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -21,7 +21,5 @@ builder.Services.AddDataProtection()
     .SetApplicationName(MachineKeyTest.AppName)
     .PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(Path.GetTempPath(), "sharedkeys", MachineKeyTest.AppName)));
 
-builder.Services.AddSystemWebAdapters()
-    // This call by itself does not register any data protection but rather integrates it with the adapters
-    .AddMachineKeyProtection();
+builder.Services.AddSystemWebAdapters();
 ```
